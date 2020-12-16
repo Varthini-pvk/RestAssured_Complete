@@ -19,7 +19,7 @@ public class CreateIncidentWithFile extends BaseInfo {
 		File dataFile=new File(inputFile);
 		
 		Response createIncidentResponse = specification.body(dataFile)
-		.queryParam("sysparm_fields", "sys_id,short_description").post();
+		.queryParam("sysparm_fields", "sys_id,short_description").post("/incidents");
 		
 		
 		 sysID = createIncidentResponse.jsonPath().get("result.sys_id");

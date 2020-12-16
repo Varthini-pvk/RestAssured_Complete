@@ -11,6 +11,6 @@ public class DeleteIncident  extends BaseInfo{
 	public void deleteIncident() 
 	{
 		System.out.println(sysID);
-		System.out.println(specification.delete(sysID).getStatusCode());
+		System.out.println(specification.delete("/incidents/"+sysID).getStatusCode());
 	}
 }
