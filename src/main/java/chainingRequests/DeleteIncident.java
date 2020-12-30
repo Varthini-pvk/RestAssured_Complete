@@ -4,6 +4,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.response.ValidatableResponse;
 
 public class DeleteIncident  extends BaseInfo{
 
@@ -11,6 +12,6 @@ public class DeleteIncident  extends BaseInfo{
 	public void deleteIncident() 
 	{
 		System.out.println(sysID);
-		System.out.println(specification.delete("/incidents/"+sysID).getStatusCode());
+		specification.delete("/incidents/"+sysID).then().assertThat().statusCode(204);
 	}
 }

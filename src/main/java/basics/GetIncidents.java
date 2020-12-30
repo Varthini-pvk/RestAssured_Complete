@@ -11,7 +11,7 @@ public class GetIncidents {
 
 	public static void main(String[] args) {
 
-
+//Used RestAssured Assertions
 
 		//1) End Point
 		RestAssured.baseURI="https://dev96572.service-now.com/api/now/table/incident";
@@ -26,11 +26,7 @@ public class GetIncidents {
 				.accept("application/xml")
 				.get();
 
-		//To Print Response
-		response.prettyPrint();
-
-		//To Print Status Code:
-		System.out.println(response.getStatusCode());
+		
 
 		//To get IncidentCount
 

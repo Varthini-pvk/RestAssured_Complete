@@ -8,12 +8,13 @@ import io.restassured.response.Response;
 
 public class ChangeRequests {
 	
-	
+	//Ng!DEaq78V8A*-E
+	//QbIcBagPeC51
 public static void main(String[] args) {
 	//Preemptive --> to byepass the initial check call without Authentication
 	int i=0;
-	RestAssured.baseURI="https://dev96572.service-now.com/api/now/table";
-	RestAssured.authentication = RestAssured.preemptive().basic("admin", "Tuna@123");
+	//RestAssured.baseURI="https://dev86385.service-now.com/api/now/table";
+	RestAssured.authentication = RestAssured.preemptive().basic("admin", "QbIcBagPeC51");
 	Response response = RestAssured.given().queryParam("sysparm_fields", "number,sys_id,impact").queryParam("impact", "3")
 	.get("change_request");
 	response.prettyPrint();
