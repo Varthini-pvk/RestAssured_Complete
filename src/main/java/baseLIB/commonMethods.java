@@ -20,8 +20,10 @@ public class commonMethods extends baseWrappers {
 
 	public static void getserviceNowDetails() throws IOException
 	{
+		snconfig=new Properties();
 		FileReader serviceNowConfigReader=new FileReader(configFolder+serviceNowConfig+".properties");
 		snconfig.load(serviceNowConfigReader);
+		
 		
 	}
 	

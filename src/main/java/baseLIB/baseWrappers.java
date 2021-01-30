@@ -5,30 +5,36 @@ import java.io.IOException;
 import java.util.Properties;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
 public class baseWrappers 
 {
 
-	static String  configFolder="./src/main/resource/config";
+	public static String  configFolder="./src/main/resources/config/";
 	static String executionConfigFile="executionConfig";
-	protected static Properties execConfig;
+	public static Properties execConfig;
 	static String serviceNowConfig="serviceNowDetails";
 	static Properties snconfig;
 	
 	public static void getExecutionConfig() throws IOException
 	{
+		execConfig=new Properties();
 		FileReader executionConfigReader=new FileReader(configFolder+executionConfigFile+".properties");
 		execConfig.load(executionConfigReader);
 		
 	}
 	
-	public String getExecutionConfig(String propertyName)
+	public static String getExecutionConfig(String propertyName)
 	{
 		return execConfig.getProperty(propertyName);
 	}
 	
+	public static void setBaseURI(String endPoint)
+	{
+		RestAssured.baseURI=endPoint;
+	}
 	public static void setBaseAuthentication(String username,String password)
 	{
 		RestAssured.authentication = RestAssured.preemptive().basic(username, password);
@@ -43,4 +49,11 @@ public class baseWrappers
 	{
 		return response.then().statusCode(200);
 	}
+	
+	public ValidatableResponse verifyContentTypeasJSon(Response response)
+	{
+		return response.then().contentType(ContentType.JSON);
+	}
+	
+	
 }

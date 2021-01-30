@@ -3,18 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="chainingRequests.DeleteIncident">
+      <class name="runner.Ruuner">
         <methods>
-          <include name="deleteIncident"/>
-          <include name="init"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
         </methods>
-      </class> <!-- chainingRequests.DeleteIncident -->
-      <class name="chainingRequests.CreateIncidentWithFile">
-        <methods>
-          <include name="createRequest_multiData" invocation-numbers="0 1"/>
-          <include name="init"/>
-        </methods>
-      </class> <!-- chainingRequests.CreateIncidentWithFile -->
+      </class> <!-- runner.Ruuner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

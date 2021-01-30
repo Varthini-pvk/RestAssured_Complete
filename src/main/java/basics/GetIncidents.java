@@ -22,9 +22,9 @@ public class GetIncidents {
 		//3)Get the request
 		//With query parameters
 		//to change accept time
-		Response response = RestAssured.given().queryParam("sysparm_fields","number,sys_id")
+		String response = RestAssured.given().queryParam("sysparm_fields","number,sys_id")
 				.accept("application/xml")
-				.get();
+				.get().prettyPrint();
 
 		
 
@@ -37,9 +37,9 @@ public class GetIncidents {
 		
 		//To get IncidentCount
 
-			XmlPath xmlPath = response.xmlPath();
-			List<String> list = xmlPath.getList("response.result.sys_id");
-			System.out.println(list.size());
+//			XmlPath xmlPath = response.xmlPath();
+//			List<String> list = xmlPath.getList("response.result.sys_id");
+//			System.out.println(list.size());
 
 
 
